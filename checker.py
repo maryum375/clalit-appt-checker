@@ -42,7 +42,7 @@ class ClalitChecker(scrapy.Spider):
              datetime.datetime.strptime(visit.css("span.visitDateTime")[0].root.text, "%d.%m.%Y"),
              visit.css("div.professionName")[0].root.text
              )
-            for visit in response.css("#visits li.visit") if 'data-id' in visit.attrib
+            for visit in response.css("#futureVisitsSection li.visit") if 'data-id' in visit.attrib
         ]
         month = datetime.datetime.now().month
         year = datetime.datetime.now().year
